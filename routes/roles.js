@@ -9,7 +9,7 @@ router.get('/', async function(req, res, next) {
   CreateSuccessRes(res,roles,200);
 });
 
-router.post('/', async function(req, res, next) {
+router.post('/',check_authentication,check_authorization(constants.ADMIN_PERMISSION), async function(req, res, next) {
  try {
     let newRole = await roleController.CreateARole(req.body.name);
     CreateSuccessRes(res,newRole,200);
