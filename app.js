@@ -11,7 +11,7 @@ var usersRouter = require('./routes/users');
 
 var app = express();
 
-mongoose.connect("mongodb://localhost:27017/S5");
+mongoose.connect("mongodb://localhost:27017/test_b6");
 mongoose.connection.on('connected',()=>{
   console.log("connected");
 })
